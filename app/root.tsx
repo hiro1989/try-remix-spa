@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react"
+import { $path } from "remix-routes" // <-- Import magical $path helper from remix-routes.
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -23,9 +24,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             gap: "8px",
           }}
         >
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/posts">Posts</Link>
+          <Link to={$path("/")}>Home</Link>
+          <Link to={$path("/about")}>About</Link>
+          <Link to={$path("/posts")}>Posts</Link>
         </div>
         {children}
         <ScrollRestoration />

@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react"
+import { $path } from "remix-routes" // <-- Import magical $path helper from remix-routes.
 
 export default function Posts() {
   return (
@@ -6,12 +7,20 @@ export default function Posts() {
       <h3>Hello /posts/!</h3>
       <ul>
         <li>
-          <Link to="/posts/apollo-11">Apollo 11</Link>
+          <Link
+            to={$path("/posts/:id", {
+              id: "apollo-11",
+            })}
+          >
+            Apollo 11
+          </Link>
         </li>
         <li>
           <Link
             to={{
-              pathname: "/posts/apollo-12",
+              pathname: $path("/posts/:id", {
+                id: "apollo-12",
+              }),
               search: "q=remix",
               hash: "the-hash",
             }}
@@ -22,7 +31,9 @@ export default function Posts() {
         <li>
           <Link
             to={{
-              pathname: "/posts/apollo-13",
+              pathname: $path("/posts/:id", {
+                id: "apollo-13",
+              }),
             }}
           >
             Apollo 13
