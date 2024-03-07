@@ -6,9 +6,11 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "preview": "vite preview",
-    "typecheck": "tsc"
+    "lint:eslint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --max-warnings=0 --fix .",
+    "lint:format": "prettier --cache --log-level warn --write .",
+    "lint:tsc": "tsc --noEmit",
+    "lint": "pnpm run lint:format && pnpm run lint:eslint && pnpm run lint:tsc",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@remix-run/node": "2.8.0",
@@ -18,16 +20,20 @@
   },
   "devDependencies": {
     "@remix-run/dev": "2.8.0",
+    "@tsconfig/strictest": "^2.0.3",
     "@types/react": "18.2.64",
     "@types/react-dom": "18.2.21",
     "@typescript-eslint/eslint-plugin": "7.1.1",
     "@typescript-eslint/parser": "7.1.1",
     "eslint": "8.57.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-react": "7.34.0",
     "eslint-plugin-react-hooks": "4.6.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
     "typescript": "5.4.2",
     "vite": "5.1.5",
     "vite-tsconfig-paths": "4.3.1"

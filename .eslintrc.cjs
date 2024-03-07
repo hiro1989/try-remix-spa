@@ -4,7 +4,6 @@
  * and should modify this configuration to best suit your team's needs.
  */
 
-/** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
   parserOptions: {
@@ -21,7 +20,13 @@ module.exports = {
   },
 
   // Base config
-  extends: ["eslint:recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "prettier",
+  ],
 
   overrides: [
     // React
@@ -80,4 +85,4 @@ module.exports = {
       },
     },
   ],
-};
+}

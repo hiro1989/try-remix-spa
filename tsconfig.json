@@ -1,5 +1,12 @@
 {
-  "include": ["env.d.ts", "**/*.ts", "**/*.tsx"],
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "include": [
+    "env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".eslintrc.cjs",
+    ".prettierrc.cjs"
+  ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
