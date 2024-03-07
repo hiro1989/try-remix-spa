@@ -9,6 +9,8 @@ export default defineConfig({
       ssr: false,
     }),
     tsconfigPaths(),
-    remixRoutes(),
+    remixRoutes({
+      strict: true,
+    }),
   ],
 })

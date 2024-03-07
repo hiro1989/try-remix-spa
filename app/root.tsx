@@ -28,9 +28,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <Link to={$path("/about")}>About</Link>
           <Link to={$path("/posts")}>Posts</Link>
           <Link
-            to={$path("/blogs/:id", {
-              id: Math.random().toString(36).slice(2),
-            })}
+            to={$path(
+              "/blogs/:id",
+              {
+                id: Math.random().toString(36).slice(2),
+              },
+              {
+                view: "list",
+                sort: "date",
+              },
+            )}
           >
             RandomBlog
           </Link>
