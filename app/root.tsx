@@ -1,4 +1,5 @@
 import {
+  Link,
   Links,
   Meta,
   Outlet,
@@ -16,6 +17,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <div
+          style={{
+            display: "flex",
+            gap: "8px",
+          }}
+        >
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </div>
         {children}
         <ScrollRestoration />
         <Scripts />
