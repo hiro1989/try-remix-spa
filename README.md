@@ -1,3 +1,23 @@
+# Impression
+
+## Pros
+
+- FWというレール
+- ドキュメントの充実
+
+## Cons
+
+- export default 必須
+- もろもろ type safe でない
+  - `<Link>`
+  - `useParams`
+
+## 中立
+
+- routes配下に全てフラットに並べるしかなさそう（フォルダ分けできない）
+  - ref. [🗺️ Flat Routes · remix-run/remix · Discussion #4482](https://github.com/remix-run/remix/discussions/4482)
+  - 真の意味で File based routing っぽい
+
 # templates/spa
 
 This template leverages [Remix SPA Mode](https://remix.run/docs/en/main/future/spa-mode) and the [Remix Vite Plugin](https://remix.run/docs/en/main/future/vite) to build your app as a Single-Page Application using [Client Data](https://remix.run/docs/en/main/guides/client-data) for all of your data loads and mutations.
