@@ -25,6 +25,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         >
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
+          <Link to="/posts">Posts</Link>
         </div>
         {children}
         <ScrollRestoration />
