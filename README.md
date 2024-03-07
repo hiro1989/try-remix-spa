@@ -11,6 +11,9 @@
 - もろもろ type safe でない
   - `<Link>`
   - `useParams`
+- 3rd party package だが、[remix-routes](https://remix.run/resources/remix-routes) を使えば、だいぶ型安全になる
+  - まだ人間が間違えてしまう余地があるが・・・
+    - e.g. `app/routes/blogs.$id.tsx`
 
 ## 中立
 
